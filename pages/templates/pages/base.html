@@ -1,0 +1,27 @@
+{% load static %}<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Django CI/CD Demo{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <strong>Django CI/CD</strong>
+      <a href="{% url 'home' %}">Головна</a>
+      <a href="{% url 'about' %}">Про проєкт</a>
+      <a href="{% url 'contact' %}">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    © {% now "Y" %} Django CI/CD Demo · v0.1
+  </footer>
+</body>
+</html>
